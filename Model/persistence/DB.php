@@ -27,7 +27,7 @@ class DB
         $this->disconnect();
     }
 
-    public static function getInstance()
+    public static function getInstance(): DB
     {
         if ( ! self::$instance) {
             self::$instance = new DB();
@@ -41,7 +41,7 @@ class DB
         return $this->conn;
     }
 
-    private function disconnect()
+    private function disconnect(): void
     {
         $this->conn     = null;
         self::$instance = null;

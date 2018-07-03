@@ -28,7 +28,7 @@ class Person
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId(): int
     {
@@ -37,7 +37,7 @@ class Person
 
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getName(): string
     {
@@ -45,15 +45,15 @@ class Person
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      */
-    public function setName($name): void
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getAddress(): string
     {
@@ -61,15 +61,15 @@ class Person
     }
 
     /**
-     * @param mixed $address
+     * @param string $address
      */
-    public function setAddress($address): void
+    public function setAddress(string $address): void
     {
         $this->address = $address;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getEmail(): string
     {
@@ -77,15 +77,15 @@ class Person
     }
 
     /**
-     * @param mixed $email
+     * @param string $email
      */
-    public function setEmail($email): void
+    public function setEmail(string $email): void
     {
         $this->email = $email;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getPhone(): string
     {
@@ -93,9 +93,9 @@ class Person
     }
 
     /**
-     * @param mixed $phone
+     * @param string $phone
      */
-    public function setPhone($phone): void
+    public function setPhone(string $phone): void
     {
         $this->phone = $phone;
     }
