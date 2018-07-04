@@ -437,13 +437,15 @@
                         e.preventDefault();
                         let edit = $(this).find('.delete')[0];
                         let id = edit.id;
-                        let modal = $('#deleteEmployeeModal');
-                        $.post('Controller/PersonDestroyController.php', 'id=' + id, function (res) {
-                            modal.modal('hide');
-                            location.reload();
-                        }).fail(function () {
-                            alert('Error');
+                        $('#deleteEmployeeModal').on('submit', function (e) {
+                            e.preventDefault();
+                            $.post('Controller/PersonDestroyController.php', 'id=' + id, function (res) {
+                                location.reload();
+                            }).fail(function () {
+                                alert('Error');
+                            });
                         });
+
                     });
                 });
             });
