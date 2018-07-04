@@ -6,7 +6,7 @@
  * Time: 20:21
  */
 
-class Person
+class Person implements JsonSerializable
 {
 
     private $id;
@@ -19,12 +19,12 @@ class Person
     {
     }
 
-    public function __set(string $name, string $address, string $email, string $phone)
+    public function set(string $name, string $address, string $email, string $phone)
     {
-        $this->name;
-        $this->address;
-        $this->email;
-        $this->phone;
+        $this->name    = $name;
+        $this->address = $address;
+        $this->email   = $email;
+        $this->phone   = $phone;
     }
 
     /**
@@ -35,6 +35,13 @@ class Person
         return $this->id;
     }
 
+    /**
+     * @param string $id
+     */
+    public function setId(string $id): void
+    {
+        $this->id = $id;
+    }
 
     /**
      * @return string
@@ -101,4 +108,22 @@ class Person
     }
 
 
+    /**
+     * Specify data which should be serialized to JSON
+     *
+     * @link  http://php.net/manual/en/jsonserializable.jsonserialize.php
+     * @return mixed data which can be serialized by <b>json_encode</b>,
+     * which is a value of any type other than a resource.
+     * @since 5.4.0
+     */
+    public function jsonSerialize()
+    {
+        return [
+            'id'      => $this->id,
+            'name'    => $this->name,
+            'address' => $this->address,
+            'email'   => $this->email,
+            'phone'   => $this->phone,
+        ];
+    }
 }

@@ -8,6 +8,7 @@
 
 class DB
 {
+
     private static $instance = null;
     private $conn;
 
@@ -19,7 +20,8 @@ class DB
     private function __construct()
     {
         $this->conn = new PDO("mysql:host={$this->host};dbname={$this->name}",
-            $this->user, $this->pass, [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'", PDO::ATTR_PERSISTENT => true]);
+            $this->user, $this->pass,
+            [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'", PDO::ATTR_PERSISTENT => true]);
     }
 
     function __destruct()
